@@ -134,7 +134,10 @@
     "variables": {
       "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnetName'))]",
       "nicName": "[concat(parameters('vmName'),parameters('vmNICNameExtension'))]",
-      "osDiskName": "[concat(parameters('vmName'),parameters('vmOSDiskNameExtension'))]"
+      "osDiskName": "[concat(parameters('vmName'),parameters('vmOSDiskNameExtension'))]",
+      "vmCustomScriptLocation": "https://raw.githubusercontent.com/aga23/vm-gamestream/master",
+      "vmCustomScriptName": "vm-gamestream-cse.ps1",
+      "vmCustomScriptFolder": "."
     },
     "resources": [
       {
@@ -234,7 +237,30 @@
               "enabled": false
             }
           }
-        }
+        },
+        "resources": [
+          {
+            "type": "extensions",
+            "name": "CustomScriptExtension",
+            "apiVersion": "2018-10-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+              "[parameters('vmName')]"
+            ],
+            "properties": {
+              "publisher": "Microsoft.Compute",
+              "type": "CustomScriptExtension",
+              "typeHandlerVersion": "1.8",
+              "autoUpgradeMinorVersion": true,
+              "settings": {
+                "fileUris": [
+                  "[concat(variables('vmCustomScriptLocation'),'/',variables('vmCustomScriptName'))]"
+                ],
+                "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('vmCustomScriptFolder'), '/', variables('vmCustomScriptName'))]"
+              }
+            }
+          }
+        ]
       }
     ],
     "outputs": {
