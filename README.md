@@ -7,4 +7,4 @@
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-This template allows you to deploy a Windows VM to Azure that can be configured to stream games via Parsec. The required installers will be available post deployment in `C:\Downloads` and instructions for preparing the VM at `C:\Desktop\vm-gamestream-buildsteps`. The `vm-gamestream.parameters.json` file can be used if running a deployment locally, make sure you deploy the resource group first!
+This template allows you to deploy a Windows VM to Azure that can be configured to stream games via Parsec. Instructions and required installers and will be available post deployment in `C:\gamestream-setup-files`. The `vm-gamestream.parameters.json` file can be used if running a deployment locally, make sure you deploy the resource group first!
