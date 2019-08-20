@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "virtualMachineAdminUsername": {
+        "value": "aga"
+      },
+      "dnsLabelPrefix": {
+        "value": "aga-gs01"
+      },
+      "vmName": {
+        "value": "aga-gs01"
+      },
+      "virtualNetworkName": {
+        "value": "aga-gs-vnet"
+      },
+      "virtualNetworkAddressPrefix": {
+        "value": "10.0.0.0/24"
+      },
+      "subnetName": {
+        "value": "default"
+      },
+      "subnetAddressPrefix": {
+        "value": "10.0.0.0/24"
+      },
+      "publicIPAddressName": {
+        "value": "aga-gs01-pip"
+      },
+      "resourceGroup": {
+        "value": "aga-gs"
+      },
+      "location": {
+        "value": "uksouth"
+      },
+      "vmDataDisks": {
+        "value": []
+      },
+      "virtualMachineImageReference": {
+        "value": {
+          "publisher": "MicrosoftWindowsServer",
+          "offer": "WindowsServer",
+          "sku": "2016-Datacenter",
+          "version": "latest"
+        }
+      },
+      "vmSize": {
+        "value": "Standard_NV6_Promo"
+      }
+    }
+  }
