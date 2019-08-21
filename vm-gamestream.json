@@ -157,7 +157,7 @@
         "apiVersion": "2018-11-01",
         "name": "[parameters('virtualNetworkName')]",
         "location": "[parameters('location')]",
-        "condition": "[not(parameters('deployVNet'))]",
+        "condition": "[parameters('deployVNet')]",
         "properties": {
           "addressSpace": {
             "addressPrefixes": [
