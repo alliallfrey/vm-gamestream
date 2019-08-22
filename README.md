@@ -8,3 +8,5 @@
 </a>
 
 This template allows you to deploy a Windows VM to Azure that can be configured to stream games via Parsec. Instructions and required installers and will be available post deployment in `C:\gamestream-setup-files`. The `vm-gamestream.parameters.json` file can be used if running a deployment locally, make sure you deploy the resource group first!
+
+Running this VM using its default size (NV6 Promo) with a 128GiB OS disk costs **~£0.83 per hour** (_assuming 1 month = 30 days_). This information is based on the Azure price calculator and may change over time.
